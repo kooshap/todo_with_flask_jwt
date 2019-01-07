@@ -14,3 +14,6 @@ api.add_resource(todo.Login, '/login')
 
 app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
 jwt = JWTManager(app)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
