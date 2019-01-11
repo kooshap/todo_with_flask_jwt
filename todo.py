@@ -114,9 +114,7 @@ class Login(Resource):
         parser.add_argument('password' ,required=True, help="password cannot be blank!")
         data = parser.parse_args()
 
-        print("user logged in " , data['username'] , " " , data['password'])
         if data['username'] == "test" and data['password'] == "secret":
-            print("user logged in")
             access_token = create_access_token(identity = data['username'])
             return {
                 'message': 'Logged in as {}'.format(data['username']),
